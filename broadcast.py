@@ -119,7 +119,7 @@ def listen(stop_event):
                 print(f'Received broadcast from {client_address}')
                 udp_socket.sendto(json.dumps(response).encode("utf-8"), client_address)
             elif data['type'] == "response":
-                print(f'* {data['name']: <{data['email']}>}')
+                print(f'* {data['name']}: <{data['email']}>')
         except socket.timeout:
             continue
 
